@@ -27,4 +27,30 @@
     function onResume() {
         // TODO: Это приложение активировано повторно. Восстановите здесь состояние приложения.
     };
-} )();
+})();
+
+function randomColor() {
+    var colors = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+    var result = "#";
+    for (var i = 0; i < 6; i++) {
+        result += colors[Math.round(Math.random() * 15)];
+    }
+    return result;
+}
+
+function randomNumber() {
+    var results = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'x'];
+    return results[Math.round(Math.random() * 10)];
+}
+
+var sign = ['+', '-'];
+
+var termsCount = Math.ceil(Math.random() * 10);
+var terms = [];
+for (var i = 0; i < termsCount; i++) {
+    var factor = new Factor(randomNumber(), sign[Math.round(Math.random())]);
+    terms.push(new Term([factor]));
+}
+
+var poly = new Polynom(terms);
+poly.show();
