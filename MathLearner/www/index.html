@@ -1,20 +1,27 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-		<meta name="format-detection" content="telephone=no">
-		<meta name="msapplication-tap-highlight" content="no">
-		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<title>MathLearner</title>
 	</head>
 	<body>
+        <a href="a.html">Ссылка</a>
         <div id="container"></div>
+        <script src="scripts/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+        <script type="text/javascript">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$', '$'], ["\\(", "\\)"]],
+                    processEscapes: true
+                }
+            });
+        </script>
+        <script src="scripts/complexFactor.js"></script>
         <script src="scripts/term.js"></script>
         <script src="scripts/factor.js"></script>
         <script src="scripts/polynom.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="scripts/platformOverrides.js"></script>
         <script type="text/javascript" src="scripts/index.js"></script>
         <script src="scripts/jquery-3.2.1.min.js"></script>

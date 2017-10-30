@@ -38,9 +38,19 @@ function randomColor() {
     return result;
 }
 
-function randomNumber() {
-    var results = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'x'];
-    return results[Math.round(Math.random() * 10)];
+function randomTerm() {
+    var term = [];
+    if (Math.random() > 0.5) {
+        term.push(new Member(Math.ceil(Math.random() * 100), sign[Math.round(Math.random())], false));
+        if (Math.random() > 0.5) {
+            term.push(new Member('x', sign[Math.round(Math.random())], true, Math.ceil(Math.random() * 3)));
+        }
+    }
+    else {
+        term.push(new Member('x', sign[Math.round(Math.random())], true, Math.ceil(Math.random() * 3)));
+    }
+    
+    return term;
 }
 
 var sign = ['+', '-'];
@@ -48,9 +58,9 @@ var sign = ['+', '-'];
 var termsCount = Math.ceil(Math.random() * 10);
 var terms = [];
 for (var i = 0; i < termsCount; i++) {
-    var factor = new Factor(randomNumber(), sign[Math.round(Math.random())]);
-    terms.push(new Term([factor]));
+    terms.push(new Term(randomTerm()));
 }
 
 var poly = new Polynom(terms);
 poly.show();
+poly.simplify();
