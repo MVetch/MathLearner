@@ -47,6 +47,7 @@ function randomTerm() {
         }
     }
     else {
+        term.push(new Member(1, sign[Math.round(Math.random())]));
         term.push(new Member('x', sign[Math.round(Math.random())], true, Math.ceil(Math.random() * 3)));
     }
     
